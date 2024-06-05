@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { scale } from 'react-native-size-matters';
 import { Orbit, Plane, Users } from '../assets/icons';
 import { OnboardingView } from '../screens/onboarding/view';
 import { PeopleView } from '../screens/people/view';
@@ -25,6 +26,10 @@ function BottomTabs() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: '#ff0000',
+        tabBarStyle: {
+          height: scale(64),
+          paddingBottom: scale(8),
+        },
       }}>
       <Tab.Screen
         name="people"
