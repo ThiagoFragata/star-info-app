@@ -3,6 +3,7 @@
     "name": "star-info-app",
     "slug": "star-info-app",
     "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -27,9 +28,6 @@
       "eas": {
         "projectId": "ae3656d1-e348-4108-be15-0682f859bb47"
       }
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/ae3656d1-e348-4108-be15-0682f859bb47"

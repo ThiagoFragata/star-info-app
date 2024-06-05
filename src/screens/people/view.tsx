@@ -1,3 +1,9 @@
+import { Text, View } from 'react-native';
+
 export function PeopleView() {
-  return;
+  return (
+    <View>
+      <Text>Pessoas</Text>
+    </View>
+  );
 }
