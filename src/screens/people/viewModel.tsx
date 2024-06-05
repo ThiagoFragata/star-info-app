@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { useUserStore } from '../../stores/useUsersStore';
-import { fetchUsers } from './services/service';
+import { fetchUsers } from './service';
 
 export function usePeopleViewModel() {
   const { users, addUsers, clearUsers, page, incPage, setPage } = useUserStore();

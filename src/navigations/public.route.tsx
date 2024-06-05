@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Orbit, Plane, Users } from '../assets/icons';
+import { OnboardingView } from '../screens/onboarding/view';
 import { PeopleView } from '../screens/people/view';
 import { PlanetsView } from '../screens/planets/view';
 import { StarshipsView } from '../screens/starships/view';
@@ -10,6 +11,10 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export interface RootParamsScreens {
+  // stacks
+  onboarding: undefined;
+  home: undefined;
+  //tabs-bottom
   people: undefined;
   planets: undefined;
   starship: undefined;
@@ -56,6 +61,7 @@ export function PublicRoutes() {
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="onboarding" component={OnboardingView} />
         <Stack.Screen name="home" component={BottomTabs} />
       </Stack.Navigator>
     </NavigationContainer>
