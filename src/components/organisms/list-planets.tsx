@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import { scale } from 'react-native-size-matters';
-import { usePeopleViewModel } from '../../screens/people/viewModel';
+import { usePlanetsViewModel } from '../../screens/planets/viewModel';
 import { TitleAndDescription } from '../atoms/title-and-description';
 
-export function ListUsers() {
-  const { error, handleNextPage, isPending, users, page, mutate, onRefresh } = usePeopleViewModel();
+export function ListPlanets() {
+  const { error, handleNextPage, isPending, planets, page, mutate, onRefresh } =
+    usePlanetsViewModel();
   useEffect(() => {
     if (page >= 1) {
       mutate();
@@ -30,7 +31,7 @@ export function ListUsers() {
 
   return (
     <FlatList
-      data={users}
+      data={planets}
       refreshControl={
         <RefreshControl refreshing={isPending} onRefresh={onRefresh} colors={['#ff0000']} />
       }
@@ -47,12 +48,19 @@ export function ListUsers() {
         <View style={s.card}>
           <TitleAndDescription title={'Nome'} description={item.name} />
           <View style={s.flexWrap}>
-            <TitleAndDescription title={'Altura'} description={item.height} />
-            <TitleAndDescription title={'Peso'} description={item.mass} />
-            <TitleAndDescription title={'Ano de nascimento'} description={item.birth_year} />
-            <TitleAndDescription title={'Cor do cabelo'} description={item.hair_color} />
-            <TitleAndDescription title={'Cor dos olhos'} description={item.eye_color} />
-            <TitleAndDescription title={'Gênero'} description={item.gender} />
+            <TitleAndDescription title={'Clima'} description={item.climate} />
+            <TitleAndDescription title={'Terreno'} description={item.terrain} />
+            <TitleAndDescription title={'População'} description={item.population} />
+            <TitleAndDescription title={'Gravidade'} description={item.gravity} />
+            <TitleAndDescription title={'Diâmetro'} description={`${item.rotation_period}km`} />
+            <TitleAndDescription
+              title={'Período de rotação'}
+              description={`${item.rotation_period} horas`}
+            />
+            <TitleAndDescription
+              title={'Período orbital'}
+              description={`${item.orbital_period} dias`}
+            />
           </View>
         </View>
       )}
