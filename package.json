@@ -25,6 +25,7 @@
     "react-native-screens": "3.31.1",
     "react-native-size-matters": "^0.4.2",
     "react-native-svg": "15.2.0",
+    "react-native-uuid": "^2.0.2",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

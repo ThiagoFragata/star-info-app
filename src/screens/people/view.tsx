@@ -1,10 +1,10 @@
 import { View } from 'react-native';
-import { Card } from '../../components/molecules/card';
+import { ListUsers } from '../../components/organisms/list-users';
 
 export function PeopleView() {
   return (
-    <View>
-      <Card />
+    <View style={{ flex: 1, backgroundColor: '#fffafa' }}>
+      <ListUsers />
     </View>
   );
 }
