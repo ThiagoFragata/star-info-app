@@ -10,7 +10,7 @@ interface StarshipsStore {
   addStarships: (newStarships: Starship[]) => void;
 }
 
-export const useStarshipStore = create<StarshipsStore>((set) => ({
+export const useStarshipsStore = create<StarshipsStore>((set) => ({
   page: 1,
   starships: [],
   clearStarships: () => set(() => ({ planets: [], page: 1 })),
